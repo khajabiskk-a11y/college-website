@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Malineni Lakshmaiah Women's Engineering College</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+            background: #f8f9fc;
+            line-height: 1.6;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 25px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6a1b9a, #e91e63);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .logo-text h2 {
+            font-size: 18px;
+            color: #4a148c;
+        }
+
+        .logo-text p {
+            font-size: 11px;
+            color: #777;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 15px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #8e24aa;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #4a148c;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            margin-top: 75px;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(
+                    rgba(48, 10, 72, 0.78),
+                    rgba(126, 24, 94, 0.72)
+                ),
+                linear-gradient(135deg, #4a148c, #ad1457);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .hero::before {
+            width: 400px;
+            height: 400px;
+            right: -150px;
+            top: -100px;
+        }
+
+        .hero::after {
+            width: 300px;
+            height: 300px;
+            left: -120px;
+            bottom: -100px;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+            padding: 60px 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            max-width: 850px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #ffd54f;
+        }
+
+        .hero p {
+            max-width: 700px;
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #f5eaf7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: #ffd54f;
+            color: #3e174d;
+        }
+
+        .btn-primary:hover {
+            background: #fff;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #6a1b9a;
+        }
+
+        /* ================= COMMON ================= */
+
+        section {
+            padding: 80px 25px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            color: #4a148c;
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #777;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            min-height: 360px;
+            border-radius: 15px;
+            background:
+                linear-gradient(135deg, rgba(74,20,140,.9), rgba(233,30,99,.75));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,.15);
+        }
+
+        .college-icon {
+            font-size: 90px;
+            margin-bottom: 15px;
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .about-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .about-list li {
+            margin: 10px 0;
+            color: #444;
+        }
+
+        .about-list li::before {
+            content: "✓";
+            color: #8e24aa;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* ================= COURSES ================= */
+
+        .courses {
+            background: #f7f3fa;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .course-card {
+            background: white;
+            padding: 30px 22px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,.07);
+            transition: .3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(74,20,140,.15);
+        }
+
+        .course-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            margin: auto auto 18px;
+            background: #f1e5f7;
+            color: #6a1b9a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .course-card h3 {
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .course-card p {
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* ================= STATS ================= */
+
+        .stats {
+            background: linear-gradient(135deg, #4a148c, #ad1457);
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat h2 {
+            font-size: 42px;
+            color: #ffd54f;
+        }
+
+        .stat p {
+            font-size: 15px;
+        }
+
+        /* ================= FACILITIES ================= */
+
+        .facilities {
+            background: white;
+        }
+
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .facility-card {
+            padding: 28px;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            transition: .3s;
+            background: #fff;
+        }
+
+        .facility-card:hover {
+            border-color: #ba68c8;
+            transform: translateY(-5px);
+        }
+
+        .facility-card .icon {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .facility-card h3 {
+            color: #4a148c;
+            margin-bottom: 8px;
+        }
+
+        .facility-card p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* ================= ADMISSIONS ================= */
+
+        .admissions {
+            background: #f7f3fa;
+        }
+
+        .admission-box {
+            background: white;
+            border-radius: 15px;
+            padding: 45px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,.08);
+        }
+
+        .admission-box h2 {
+            color: #4a148c;
+            margin-bottom: 15px;
+        }
+
+        .admission-box p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 25px;
+        }
+
+        /* ================= PLACEMENTS ================= */
+
+        .placements {
+            background: white;
+        }
+
+        .placement-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .placement-card {
+            background: #fafafa;
+            border-radius: 12px;
+            padding: 30px;
+            border-left: 5px solid #8e24aa;
+        }
+
+        .placement-card h3 {
+            color: #4a148c;
+            margin-bottom: 12px;
+        }
+
+        .placement-card p {
+            color: #666;
+        }
+
+        /* ================= EVENTS ================= */
+
+        .events {
+            background: #f7f3fa;
+        }
+
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,.07);
+        }
+
+        .event-top {
+            height: 140px;
+            background: linear-gradient(135deg, #6a1b9a, #e91e63);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+        }
+
+        .event-content {
+            padding: 22px;
+        }
+
+        .event-content h3 {
+            margin-bottom: 8px;
+            color: #4a148c;
+        }
+
+        .event-content p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+        }
+
+        .contact-info h3 {
+            font-size: 28px;
+            color: #4a148c;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            min-width: 45px;
+            height: 45px;
+            background: #f1e5f7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-item h4 {
+            margin-bottom: 3px;
+        }
+
+        .contact-item p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .contact-form {
+            background: #fafafa;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #8e24aa;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #24102e;
+            color: white;
+            padding: 50px 25px 20px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+            color: #ffd54f;
+        }
+
+        footer p {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin: 8px 0;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 35px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #4b3454;
+            text-align: center;
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        /* ================= BACK TO TOP ================= */
+
+        #topBtn {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 50%;
+            background: #6a1b9a;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            z-index: 999;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                gap: 0;
+                display: none;
+                box-shadow: 0 5px 10px rgba(0,0,0,.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                padding: 15px 25px;
+                border-bottom: 1px solid #eee;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .course-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .facility-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .event-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .logo-text h2 {
+                font-size: 14px;
+            }
+
+            .logo-text p {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .about-grid,
+            .placement-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .course-grid,
+            .facility-grid,
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 450px) {
+
+            .course-grid,
+            .facility-grid,
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                <div class="logo-icon">ML</div>
+
+                <div class="logo-text">
+                    <h2>MLWEC</h2>
+                    <p>Women's Engineering College</p>
+                </div>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#facilities">Facilities</a></li>
+                <li><a href="#admissions">Admissions</a></li>
+                <li><a href="#placements">Placements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+        </nav>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Empowering Women Through
+                <span>Engineering & Innovation</span>
+            </h1>
+
+            <p>
+                Welcome to Malineni Lakshmaiah Women's Engineering College.
+                A learning environment focused on technical education,
+                innovation, skills and career development.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#admissions" class="btn btn-primary">
+                    Explore Admissions
+                </a>
+
+                <a href="#about" class="btn btn-outline">
+                    Discover College
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about" id="about">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>About Our College</h2>
+                <p>
+                    Building knowledge, confidence and technical skills
+                    for the next generation of women engineers.
+                </p>
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-image">
+
+                    <div>
+                        <div class="college-icon">🎓</div>
+
+                        <h2>MLWEC</h2>
+
+                        <p>
+                            Malineni Lakshmaiah Women's Engineering College
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="about-text">
+
+                    <h3>Learn. Innovate. Lead.</h3>
+
+                    <p>
+                        Malineni Lakshmaiah Women's Engineering College
+                        provides students with an environment where they
+                        can develop technical knowledge, practical skills
+                        and professional confidence.
+                    </p>
+
+                    <p>
+                        The college focuses on engineering education,
+                        practical learning, innovation and preparing
+                        students for opportunities in the technology sector.
+                    </p>
+
+                    <ul class="about-list">
+                        <li>Technical and practical learning</li>
+                        <li>Student-centered education</li>
+                        <li>Innovation and project development</li>
+                        <li>Career and placement preparation</li>
+                        <li>Extra-curricular activities</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= COURSES ================= -->
+
+    <section class="courses" id="courses">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Engineering Programs</h2>
+                <p>
+                    Explore engineering and technology areas for your
+                    academic and professional journey.
+                </p>
+            </div>
+
+            <div class="course-grid">
+
+                <div class="course-card">
+                    <div class="course-icon">💻</div>
+                    <h3>Computer Science</h3>
+                    <p>
+                        Programming, software development,
+                        databases and modern computing.
+                    </p>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">🤖</div>
+                    <h3>AI & Data Science</h3>
+                    <p>
+                        Artificial intelligence, machine learning
+                        and data-driven technologies.
+                    </p>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">⚡</div>
+                    <h3>ECE</h3>
+                    <p>
+                        Electronics, communication systems,
+                        embedded systems and technology.
+                    </p>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">⚙️</div>
+                    <h3>Engineering</h3>
+                    <p>
+                        Engineering fundamentals, practical
+                        learning and technical applications.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= STATS ================= -->
+
+    <section class="stats">
+
+        <div class="container">
+
+            <div class="stats-grid">
+
+                <div class="stat">
+                    <h2 class="counter" data-target="25">0</h2>
+                    <p>Years of Excellence</p>
+                </div>
+
+                <div class="stat">
+                    <h2 class="counter" data-target="3000">0</h2>
+                    <p>Students</p>
+                </div>
+
+                <div class="stat">
+                    <h2 class="counter" data-target="100">0</h2>
+                    <p>Faculty & Staff</p>
+                </div>
+
+                <div class="stat">
+                    <h2 class="counter" data-target="50">0</h2>
+                    <p>Recruitment Opportunities</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FACILITIES ================= -->
+
+    <section class="facilities" id="facilities">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Campus Facilities</h2>
+                <p>
+                    Facilities designed to support academic,
+                    technical and personal development.
+                </p>
+            </div>
+
+            <div class="facility-grid">
+
+                <div class="facility-card">
+                    <div class="icon">📚</div>
+                    <h3>Library</h3>
+                    <p>
+                        Academic resources, reference materials
+                        and digital learning resources.
+                    </p>
+                </div>
+
+                <div class="facility-card">
+                    <div class="icon">💻</div>
+                    <h3>Computer Labs</h3>
+                    <p>
+                        Practical computing environments for
+                        programming and technical learning.
+                    </p>
+                </div>
+
+                <div class="facility-card">
+                    <div class="icon">🔬</div>
+                    <h3>Laboratories</h3>
+                    <p>
+                        Practical laboratories supporting
+                        engineering education.
+                    </p>
+                </div>
+
+                <div class="facility-card">
+                    <div class="icon">🏠</div>
+                    <h3>Hostel</h3>
+                    <p>
+                        Student accommodation and campus
+                        support facilities.
+                    </p>
+                </div>
+
+                <div class="facility-card">
+                    <div class="icon">🏆</div>
+                    <h3>Sports</h3>
+                    <p>
+                        Opportunities for sports, recreation
+                        and student activities.
+                    </p>
+                </div>
+
+                <div class="facility-card">
+                    <div class="icon">🚌</div>
+                    <h3>Transportation</h3>
+                    <p>
+                        Transportation support for students
+                        and campus activities.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ADMISSIONS ================= -->
+
+    <section class="admissions" id="admissions">
+
+        <div class="container">
+
+            <div class="admission-box">
+
+                <h2>Admissions Open</h2>
+
+                <p>
+                    Begin your engineering journey with a learning
+                    environment focused on technical skills,
+                    innovation and career development.
+                </p>
+
+                <button class="btn btn-primary"
+                        onclick="showAdmissionMessage()">
+                    Apply Now
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PLACEMENTS ================= -->
+
+    <section class="placements" id="placements">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Training & Placements</h2>
+                <p>
+                    Supporting students in developing the skills
+                    required for professional opportunities.
+                </p>
+            </div>
+
+            <div class="placement-grid">
+
+                <div class="placement-card">
+
+                    <h3>💼 Career Preparation</h3>
+
+                    <p>
+                        Students can develop communication skills,
+                        aptitude skills, technical knowledge and
+                        interview preparation through career-focused
+                        activities.
+                    </p>
+
+                </div>
+
+                <div class="placement-card">
+
+                    <h3>🎯 Skill Development</h3>
+
+                    <p>
+                        Technical projects, workshops, coding practice
+                        and industry-oriented learning can help students
+                        prepare for technology careers.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EVENTS ================= -->
+
+    <section class="events">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Campus Activities</h2>
+                <p>
+                    Academic, technical and cultural activities
+                    that encourage students to participate and learn.
+                </p>
+            </div>
+
+            <div class="event-grid">
+
+                <div class="event-card">
+
+                    <div class="event-top">💻</div>
+
+                    <div class="event-content">
+                        <h3>Technical Events</h3>
+
+                        <p>
+                            Hackathons, coding activities,
+                            technical workshops and project exhibitions.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="event-card">
+
+                    <div class="event-top">🎤</div>
+
+                    <div class="event-content">
+                        <h3>Seminars & Workshops</h3>
+
+                        <p>
+                            Interactive sessions designed to expose
+                            students to new technologies and skills.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="event-card">
+
+                    <div class="event-top">🎉</div>
+
+                    <div class="event-content">
+                        <h3>Cultural Activities</h3>
+
+                        <p>
+                            Cultural programs and student activities
+                            that encourage creativity and teamwork.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact" id="contact">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>
+                    Have a question? Send us a message.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-info">
+
+                    <h3>Get In Touch</h3>
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">📍</div>
+
+                        <div>
+                            <h4>Campus</h4>
+                            <p>
+                                Malineni Lakshmaiah Women's
+                                Engineering College
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">📞</div>
+
+                        <div>
+                            <h4>Phone</h4>
+                            <p>
+                                Contact the college admission office
+                                for current details.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">✉️</div>
+
+                        <div>
+                            <h4>Email</h4>
+                            <p>
+                                Contact the official college office
+                                for admission enquiries.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-form">
+
+                    <form id="contactForm">
+
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text"
+                                   id="name"
+                                   placeholder="Enter your name"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email"
+                                   id="email"
+                                   placeholder="Enter your email"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea id="message"
+                                      placeholder="Enter your message"
+                                      required></textarea>
+                        </div>
+
+                        <button type="submit"
+                                class="btn btn-primary">
+                            Send Message
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <div>
+                <h3>MLWEC</h3>
+
+                <p>
+                    Malineni Lakshmaiah Women's Engineering College
+                    — empowering students through engineering,
+                    education and innovation.
+                </p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#admissions">Admissions</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Explore</h3>
+
+                <ul class="footer-links">
+                    <li><a href="#facilities">Facilities</a></li>
+                    <li><a href="#placements">Placements</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © <span id="year"></span> Malineni Lakshmaiah Women's Engineering College.
+            All Rights Reserved.
+        </div>
+
+    </footer>
+
+
+    <!-- BACK TO TOP -->
+
+    <button id="topBtn" onclick="scrollToTop()">↑</button>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        /* Mobile Menu */
+
+        function toggleMenu() {
+            document.getElementById("navLinks")
+                .classList.toggle("active");
+        }
+
+
+        /* Close menu after clicking */
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                document.getElementById("navLinks")
+                    .classList.remove("active");
+
+            });
+
+        });
+
+
+        /* Animated Counters */
+
+        const counters = document.querySelectorAll(".counter");
+
+        const observer = new IntersectionObserver(entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    const counter = entry.target;
+
+                    const target =
+                        parseInt(counter.getAttribute("data-target"));
+
+                    let count = 0;
+
+                    const updateCounter = () => {
+
+                        const increment = target / 80;
+
+                        count += increment;
+
+                        if (count < target) {
+
+                            counter.innerText =
+                                Math.ceil(count);
+
+                            setTimeout(updateCounter, 20);
+
+                        } else {
+
+                            counter.innerText = target + "+";
+
+                        }
+
+                    };
+
+                    updateCounter();
+
+                    observer.unobserve(counter);
+                }
+
+            });
+
+        });
+
+        counters.forEach(counter => {
+            observer.observe(counter);
+        });
+
+
+        /* Admission Button */
+
+        function showAdmissionMessage() {
+
+            alert(
+                "Thank you for your interest in MLWEC!\n\n" +
+                "Please contact the college admission office " +
+                "for the latest admission procedure and dates."
+            );
+
+        }
+
+
+        /* Contact Form */
+
+        document.getElementById("contactForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const name =
+                    document.getElementById("name").value;
+
+                alert(
+                    "Thank you, " + name +
+                    "!\n\nYour message has been received."
+                );
+
+                this.reset();
+
+            });
+
+
+        /* Back To Top */
+
+        const topBtn = document.getElementById("topBtn");
+
+        window.addEventListener("scroll", function() {
+
+            if (window.scrollY > 400) {
+                topBtn.style.display = "block";
+            } else {
+                topBtn.style.display = "none";
+            }
+
+        });
+
+
+        function scrollToTop() {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+
+        /* Current Year */
+
+        document.getElementById("year").innerText =
+            new Date().getFullYear();
+
+    </script>
+
+</body>
+</html>
